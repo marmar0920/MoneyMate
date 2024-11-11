@@ -35,3 +35,4 @@ MoneyMate/
 └── static/                 # Static files folder
     └── style.css           # CSS file for styling
 ```
+## Technologies Used
