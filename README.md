@@ -138,3 +138,6 @@ Contributions are welcome! To contribute:
 ## License
 
 This project is licensed under the MIT License.
+## Notable Commits
+- ** Updated README.md**: https://github.com/ksu-is/MoneyMate/commit/cdf5aa42f357e53c6e534429037b7296305f9ca5
+
