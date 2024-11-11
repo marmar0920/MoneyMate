@@ -36,3 +36,7 @@ MoneyMate/
     └── style.css           # CSS file for styling
 ```
 ## Technologies Used
+- **Backend:** Flask (Python)
+- **Frontend:** HTML, CSS
+- **Data Storage:** JSON file (`moneymate_data.json`)
+- **Styling:** Google Fonts (Playfair Display), Custom CSS
