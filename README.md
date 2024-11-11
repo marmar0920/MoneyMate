@@ -18,3 +18,20 @@ MoneyMate is a simple, web-based personal finance tracker that helps users log i
 - **Set Budgets:** Define budgets for spending categories and monitor spending against set limits.
 - **Set Savings Goals:** Set and track progress toward specific financial goals with customs goal names and targets.
 - **View Financial Summary:** Get an overview of total income, total expenses, budget usage, and savings goal progress.
+## Project Structure
+
+```plaintext
+MoneyMate/
+│
+├── app.py                  # Main Flask application file
+├── moneymate_data.json     # JSON file for data storage
+├── templates/              # HTML templates folder
+│   ├── index.html          # Homepage
+│   ├── log_income.html     # Log income page
+│   ├── log_expense.html    # Log expense page
+│   ├── set_budget.html     # Set budget page
+│   ├── set_goal.html       # Set savings goal page
+│   └── summary.html        # Financial summary page
+└── static/                 # Static files folder
+    └── style.css           # CSS file for styling
+```
