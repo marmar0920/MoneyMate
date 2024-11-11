@@ -91,4 +91,50 @@ On the homepage, you’ll find links to navigate through different functionaliti
 - **Set Budget**
 - **Set Savings Goal**
 - **View Summary**
+### Log Income
 
+Use this page to record income entries. Enter the amount and an optional description, then submit to save the entry.
+
+### Log Expense
+
+Record expenses by entering the amount, category (e.g., Food, Transport), and an optional description. Submit to save the entry.
+
+### Set Budget
+
+Define spending limits for different categories. Specify a category and the budget amount, then submit to save.
+
+### Set Savings Goal
+
+Set financial goals by entering a goal name and target amount. Track your savings progress over time.
+
+### View Summary
+
+Get an overview of your financial status, including:
+- Total income and expenses
+- Expenses by category
+- Budget usage for each category
+- Savings goals progress
+
+## Styling
+
+MoneyMate features a pink-themed, feminine design with the *Playfair Display* font. All styling is handled in `static/style.css`. To customize the look and feel, modify this CSS file as needed.
+
+## Troubleshooting
+
+If you encounter issues, try these steps:
+- Ensure Flask is installed: `pip install flask`
+- Restart the Flask server after making code changes.
+- Clear your browser cache or try opening the site in an incognito window.
+
+## Contributing
+
+Contributions are welcome! To contribute:
+1. Fork the repository.
+2. Create a feature branch: `git checkout -b feature-branch-name`.
+3. Commit your changes: `git commit -m "Add new feature"`.
+4. Push to the branch: `git push origin feature-branch-name`.
+5. Open a pull request.
+
+## License
+
+This project is licensed under the MIT License.
