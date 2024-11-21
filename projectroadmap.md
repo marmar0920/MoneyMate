@@ -30,8 +30,8 @@
 
 Milestone                       | Compleition  |
 |---------------------------------|-------------------|
-| Project Setup                   |           |
-| Expense Tracking                |          |
+| Project Setup                   |   Done        |
+| Expense Tracking                |   Done        |
 | Budget Management               |            |
 | Data Visualization              |           |
 | Codebase Evaluation             |            |
