@@ -28,6 +28,16 @@
 - **Frontend**: HTML, CSS, JavaScript
 - **Visualization**: Matplotlib, Plotly
 
+Milestone                       | Compleition  |
+|---------------------------------|-------------------|
+| Project Setup                   |           |
+| Expense Tracking                |          |
+| Budget Management               |            |
+| Data Visualization              |           |
+| Codebase Evaluation             |            |
+| UI Enhancements                 |           |
+| Testing & Debugging             |           |
+| Final Review & Deployment       |          
 
 ## Sprint Requirements
 
