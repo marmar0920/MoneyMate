@@ -45,16 +45,20 @@ def log_income():
 @app.route('/log_expense', methods=["GET", "POST"])
 def log_expense():
     if request.method == "POST":
-        amount = float(request.form["amount"])
-        category = request.form["category"]
-        description = request.form["description"]
-        entry = {"amount": amount, "category": category, "description": description, "date": datetime.now().isoformat()}
-        data["expenses"].append(entry)
-        save_data()
-        flash("Expense logged successfully.")
+        try:
+            amount = float(request.form["amount"])
+            if amount <= 0:
+                raise ValueError("Amount must be positive.")
+            category = request.form["category"]
+            description = request.form["description"]
+            entry = {"amount": amount, "category": category, "description": description, "date": datetime.now().isoformat()}
+            data["expenses"].append(entry)
+            save_data()
+            flash("Expense logged successfully.")
+        except ValueError as e:
+            flash(f"Error: {e}")
         return redirect(url_for('index'))
     return render_template('log_expense.html')
-
 
 @app.route('/set_budget', methods=["GET", "POST"])
 def set_budget():
