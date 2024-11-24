@@ -158,8 +158,8 @@ def main_menu():
             print("Exiting MoneyMate. Have a great day!")
             break
         else:
-            print("Invalid choice. Please enter a number from 1 to 7.\n")
-def search_expenses():
+        print("Invalid choice. Please enter a number from 1 to 7.\n")
+
     search_term = input("Enter a keyword to search for expenses: ").lower()
     results = [e for e in data["expenses"] if search_term in e["description"].lower()]
     if results:
