@@ -111,6 +111,11 @@ def view_summary():
     print(f"\nOverall Balance: ${total_income - total_expenses:.2f}")
     print("--- End of Summary ---\n")
 
+    print("\nRemaining Budget by Category:")
+    for category, budget in data["budgets"].items():
+        spent = category_expenses.get(category, 0)
+        remaining = budget - spent
+        print(f" - {category}: ${remaining:.2f} remaining")
 
 def main_menu():
     print("Welcome to MoneyMate! Select an option:")
