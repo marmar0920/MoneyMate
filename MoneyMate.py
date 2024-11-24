@@ -17,7 +17,12 @@ data = {
 if exists(DATA_FILE):
     with open(DATA_FILE, "r") as file:
         data = json.load(file)
-
+if not exists(DATA_FILE):
+    with open(DATA_FILE, "w") as file:
+        json.dump(data, file, indent=4)
+else:
+    with open(DATA_FILE, "r") as file:
+        data = json.load(file)
 
 def save_data():
     with open(DATA_FILE, "w") as file:
@@ -117,6 +122,12 @@ def view_summary():
         remaining = budget - spent
         print(f" - {category}: ${remaining:.2f} remaining")
 
+def progress_bar(current, total, length=20):
+    proportion = int((current / total) * length)
+    bar = "[" + "#" * proportion + "-" * (length - proportion) + "]"
+    return bar
+    for goal, details in data["savings_goals"].items():
+    print(f" - {goal}: {progress_bar(details['saved'], details['target'])} {details['saved']:.2f}/{details['target']:.2f}")
 def main_menu():
     print("Welcome to MoneyMate! Select an option:")
     while True:
