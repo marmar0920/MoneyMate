@@ -27,12 +27,17 @@ def index():
 @app.route('/log_income', methods=["GET", "POST"])
 def log_income():
     if request.method == "POST":
-        amount = float(request.form["amount"])
-        description = request.form["description"]
-        entry = {"amount": amount, "description": description, "date": datetime.now().isoformat()}
-        data["income"].append(entry)
-        save_data()
-        flash("Income logged successfully.")
+        try:
+            amount = float(request.form["amount"])
+            if amount <= 0:
+                raise ValueError("Amount must be positive.")
+            description = request.form["description"]
+            entry = {"amount": amount, "description": description, "date": datetime.now().isoformat()}
+            data["income"].append(entry)
+            save_data()
+            flash("Income logged successfully.")
+        except ValueError as e:
+            flash(f"Error: {e}")
         return redirect(url_for('index'))
     return render_template('log_income.html')
 
