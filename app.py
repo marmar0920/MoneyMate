@@ -20,8 +20,9 @@ else:
         data = json.load(file)
 
 def save_data():
+    shutil.copy(DATA_FILE, DATA_FILE + ".bak")
     with open(DATA_FILE, "w") as file:
-        json.dump(data, file, indent=4)
+        json.dump(data, file, indent=4)4)
 
 
 @app.route('/')
