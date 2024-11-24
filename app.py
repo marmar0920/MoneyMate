@@ -59,7 +59,15 @@ def log_expense():
             flash(f"Error: {e}")
         return redirect(url_for('index'))
     return render_template('log_expense.html')
-
+    
+@app.route('/search_expenses', methods=["GET", "POST"])
+def search_expenses():
+    if request.method == "POST":
+        query = request.form["query"].lower()
+        results = [e for e in data["expenses"] if query in e["description"].lower()]
+        return render_template('search_results.html', results=results, query=query)
+    return render_template('search_expenses.html')
+    
 @app.route('/set_budget', methods=["GET", "POST"])
 def set_budget():
     if request.method == "POST":
