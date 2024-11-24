@@ -12,7 +12,12 @@ data = {"income": [], "expenses": [], "budgets": {}, "savings_goals": {}}
 if exists(DATA_FILE):
     with open(DATA_FILE, "r") as file:
         data = json.load(file)
-
+if not exists(DATA_FILE):
+    with open(DATA_FILE, "w") as file:
+        json.dump(data, file, indent=4)
+else:
+    with open(DATA_FILE, "r") as file:
+        data = json.load(file)
 
 def save_data():
     with open(DATA_FILE, "w") as file:
