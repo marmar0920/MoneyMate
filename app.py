@@ -19,11 +19,11 @@ if not exists(DATA_FILE):
 else:
     with open(DATA_FILE, "r") as file:
         data = json.load(file)
-
 def save_data():
-    shutil.copy(DATA_FILE, DATA_FILE + ".bak")
+    if exists(DATA_FILE):
+        shutil.copy(DATA_FILE, DATA_FILE + ".bak")
     with open(DATA_FILE, "w") as file:
-        json.dump(data, file, indent=4)4)
+        json.dump(data, file, indent=4)
 
 
 @app.route('/')
