@@ -69,6 +69,16 @@ def add_to_savings_goal():
     else:
         print(f"Savings goal '{goal_name}' does not exist.\n")
 
+def validate_positive_float(prompt):
+    while True:
+        try:
+            value = float(input(prompt))
+            if value < 0:
+                print("Value must be a positive number. Try again.")
+                continue
+            return value
+        except ValueError:
+            print("Invalid input. Please enter a number.")
 
 def view_summary():
     print("\n--- Financial Summary ---")
