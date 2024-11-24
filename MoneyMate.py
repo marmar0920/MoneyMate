@@ -148,7 +148,14 @@ def main_menu():
             break
         else:
             print("Invalid choice. Please enter a number from 1 to 7.\n")
-
-
+def search_expenses():
+    search_term = input("Enter a keyword to search for expenses: ").lower()
+    results = [e for e in data["expenses"] if search_term in e["description"].lower()]
+    if results:
+        print("\nMatching Expenses:")
+        for e in results:
+            print(f" - ${e['amount']:.2f} for {e['description']} (Category: {e['category']}, Date: {e['date']})")
+    else:
+        print("No matching expenses found.\n")
 if __name__ == "__main__":
     main_menu()
