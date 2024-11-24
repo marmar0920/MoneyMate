@@ -88,16 +88,19 @@ def set_goal():
 def summary():
     total_income = sum(item["amount"] for item in data["income"])
     total_expenses = sum(item["amount"] for item in data["expenses"])
-    
-    
+
     category_expenses = {}
     for expense in data["expenses"]:
         category = expense["category"]
         category_expenses[category] = category_expenses.get(category, 0) + expense["amount"]
-    
+
+    # Calculate remaining budgets
+    remaining_budgets = {category: data["budgets"].get(category, 0) - category_expenses.get(category, 0)
+                         for category in data["budgets"]}
+
     return render_template('summary.html', total_income=total_income, total_expenses=total_expenses,
                            category_expenses=category_expenses, budgets=data["budgets"],
-                           savings_goals=data["savings_goals"])
+                           savings_goals=data["savings_goals"], remaining_budgets=remaining_budgets)
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template('404.html'), 404
